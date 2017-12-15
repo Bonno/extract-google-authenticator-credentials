@@ -16,7 +16,7 @@ while read _id email secret counter type provider issuer original_name
 
 	url="otpauth://totp/"$email"?secret="$secret"&issuer="$issuer;
 	echo '<div class="qrcode">'
-	echo '<div class="title">'$email'</div>'
+	echo '<div class="title">'$issuer' ('$email')</div>'
 	echo '<div class="code" id="__qrcode__'$_id'"></div>'
 	echo '<script>'
 	echo '	new QRCode(document.getElementById("__qrcode__'$_id'"), "'$url'");'
